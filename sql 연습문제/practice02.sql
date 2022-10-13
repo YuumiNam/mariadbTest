@@ -46,4 +46,3 @@ select date_format(now(), '%Y') - date_format(max(birth_date), '%Y') as '최고�
 		date_format(now(), '%Y') - date_format(min(birth_date), '%Y') as '최고연장자'
 	from employees;
     
-
