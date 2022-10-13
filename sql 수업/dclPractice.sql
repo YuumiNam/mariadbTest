@@ -1,4 +1,5 @@
 -- 실행은 ctrl + enter
+
 -- 데이터베이스 생성
 create database webdb;
 
