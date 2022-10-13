@@ -29,7 +29,7 @@ select count(gender)
 -- 현재 근무하고 있는 직원 수는 몇 명입니까? (salaries 테이블을 사용합니다.) 
 select count(*)
 	from salaries
-    where to_date = '9999-01-01' and to_date like '9999%';
+    where to_date like '9999%';
     
 
 -- 문제5.
@@ -45,7 +45,7 @@ select count(title)
     where title = 'Manager' and to_date like '9999%';
     
     
--- 문제7. 수정필요!!
+-- 문제7.
 -- 전체 부서를 출력하려고 합니다. 순서는 부서이름이 긴 순서대로 출력해 보세요.
 select dept_name
 	from departments
