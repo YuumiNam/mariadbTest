@@ -12,7 +12,7 @@ select concat(first_name,' ',last_name)
 -- “이름”, “성별”, “입사일"로 컬럼 이름을 대체해 보세요.
 select concat(first_name,' ',last_name) as '이름', gender as '성별', hire_date as '입사일'
 	from employees
-order by hire_date asc;
+order by hire_date;
 
 
 -- 문제3.
@@ -81,4 +81,4 @@ select count(*)
 select emp_no,title, from_date, to_date
 	from titles
     where emp_no = 13250
-order by from_date asc;
+order by from_date;
