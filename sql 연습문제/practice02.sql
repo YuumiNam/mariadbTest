@@ -22,6 +22,9 @@ select date_format(max(hire_date), '%Y년 %m월 %d일') as '마지막신입받�
 select date_format(min(hire_date), '%Y년 %m월 %d일')
 	from employees;
 
+select period_diff(date_format(b.to_date,'%y%m'),date_format(a.hire_date, '%y%m')) as '근속기간'
+	from employees a, salaries b
+    where a.emp_no = b.emp_no;
 
 
 -- 문제4.
