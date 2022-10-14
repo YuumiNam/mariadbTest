@@ -36,6 +36,13 @@ select first_name, hire_date,
 	   date_add(hire_date, interval 5 year)
 	from employees;
     
+    
+-- max(),min()을
+-- 날짜에도 사용 가능
+select max(hire_date) as '가장최근입사', min(hire_date) as '가장오래된입사'
+	from employees;
+
+
 
 -- 여러가지 type들
 -- 문자 : varchar, char, text
@@ -48,6 +55,4 @@ select first_name, hire_date,
 select '12345' + 10, cast('12345' as signed) + 10;
 select '2022-10-10', date_format(cast('2022-10-10' as date),'%Y년 %m월 %d일');
 select cast(cast(1-2 as unsigned) as signed);
-
-
 
