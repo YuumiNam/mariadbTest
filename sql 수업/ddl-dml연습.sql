@@ -70,12 +70,14 @@ delete
     
 
 -- transaction DB에 실제 반영하는것을 미룸
+-- 은행에서 계좌이체를 할때 송급계좌는 업데이트 됐는데, 입금계좌는 업데이트가 에러난 경우
+-- 모든 업데이트가 정상적으로 이루어져야지 DB에 실제 반영시키도록 만듬
 select @@autocommit;
 set autocommit = 0;
 
 insert
 	into member
-    values(null,'dltjsam1@gmail.com', password('2134'), '선무', '개발팀', null);
+    values(null,'dltjsam1@gmail.com', password('2134'), '선무', '개발팀', null); -- 추가를 했지만, 실제 db에는 반영x mariadb에 들어가보면 확인가능
 
 select *
 	from member;
