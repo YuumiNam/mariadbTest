@@ -84,7 +84,7 @@ select a.title, avg(salary) as avg_salary
     having avg_salary = (select min(a.avg_salary)
 							from (select a.title, avg(salary) as avg_salary
 									from titles a, salaries b
-									where a.emp_no = b.emp_no
+										where a.emp_no = b.emp_no
 										and a.to_date like '9999%'
 										and b.to_date like '9999%'
 									group by a.title) a);
