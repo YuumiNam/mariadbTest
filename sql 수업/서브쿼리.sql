@@ -102,7 +102,7 @@ order by avg_salary
 
 
 -- 3-2) 복수행 연산자 : in, not, in, any, all
--- any 사용법a
+-- any 사용법
 -- 1. =any : in과 동일
 -- 2. >any, >any : 최소값 
 -- 3. <any, <=any : 최대값
