@@ -81,7 +81,7 @@ select a.title, avg(salary) as avg_salary
         and a.to_date like '9999%'
         and b.to_date like '9999%'
 	group by a.title
-    having avg_salary = (select min(a.avg_salary)
+    having avg_salary = (select min(a.avg_salary) -- 직책별 평균급여 중 가장 작은 평균급여와 같은 직책을 고른다는 뜻
 							from (select a.title, avg(salary) as avg_salary
 									from titles a, salaries b
 										where a.emp_no = b.emp_no
@@ -97,7 +97,7 @@ select a.title, avg(salary) as avg_salary
         and b.to_date like '9999%'
 	group by a.title
 order by avg_salary
-	limit 0,1;
+	limit 0,1; -- 평균급여 오름차순 한 것을 위에서 첫번째꺼 한개만 고른다는 뜻
 
 
 
