@@ -72,6 +72,13 @@ select b.emp_no, b.first_name, c.salary
 
 -- 문제4.
 -- 현재, 사원들의 사번, 이름, 매니저 이름, 부서 이름으로 출력해 보세요.
+select c.emp_no, c.first_name, a.dept_name
+	from departments a, dept_manager b, employees c
+    where a.dept_no = b.dept_no
+		and b.emp_no = c.emp_no
+        and b.to_date like '9999%';
+
+
 
 
 -- 문제5.
@@ -183,4 +190,6 @@ select a.title, avg(salary) as avg_salary
 -- 문제8.
 -- 현재 자신의 매니저보다 높은 연봉을 받고 있는 직원은?
 -- 부서이름, 사원이름, 연봉, 매니저 이름, 메니저 연봉 순으로 출력합니다.
+
+
 
