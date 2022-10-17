@@ -72,11 +72,24 @@ select b.emp_no, b.first_name, c.salary
 
 -- 문제4.
 -- 현재, 사원들의 사번, 이름, 매니저 이름, 부서 이름으로 출력해 보세요.
-select c.emp_no, c.first_name, a.dept_name
-	from departments a, dept_manager b, employees c
+select c.emp_no, c.first_name ,d.first_name ,a.dept_name
+	from departments a, dept_manager b, employees c , (select b.first_name
+														from dept_manager a, employees b
+														where a.emp_no = b.emp_no
+															and a.to_date like '9999%') d
     where a.dept_no = b.dept_no
 		and b.emp_no = c.emp_no
-        and b.to_date like '9999%';
+        and b.to_date like '9999%'
+order by c.emp_no;
+        
+        
+-- 매니저 이름
+select b.first_name
+	from dept_manager a, employees b
+	where a.emp_no = b.emp_no
+		and a.to_date like '9999%';
+
+
 
 
 
