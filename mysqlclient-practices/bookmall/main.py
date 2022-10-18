@@ -13,7 +13,6 @@ print("--카테고리 리스트--")
 # model_category.insert('문학')
 # model_category.insert('IT')
 # model_category.insert('요리')
-model_category.deletebyname('요리')
 results = model_category.findall()
 for index, result in enumerate(results):
     print(f'{index + 1} : {result["name"]}')
