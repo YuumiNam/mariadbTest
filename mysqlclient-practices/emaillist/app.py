@@ -10,18 +10,25 @@ def run_list() :
     for index, result in enumerate(results):  # index를 쓰려면 enumerate()를 갖고와야함
         print(f'{index + 1} : {result["first_name"]}{result["last_name"]} : {result["email"]}')
 
-
 def run_add() :
     # 입력
     firstname = input('first name : ')
     lastname = input('last name : ')
     email = input('email : ')
-
     # 처리
     model.insert(firstname, lastname, email)
-
     # 출력
     run_list()
+
+def run_delete() :
+    # 입력
+    email = input("email : ")
+    # 처리
+    model.deletebyemail(email)
+    # 출력
+    run_list()
+
+
 
 
 def main() :
@@ -35,7 +42,7 @@ def main() :
             run_add()
 
         elif cmd == 'd' :
-            model.delete()
+            run_delete()
 
         elif cmd == 'q' :
             print("종료")
@@ -43,7 +50,6 @@ def main() :
 
         else :
             print("알 수없는 명령입니다.")
-
 
 
 if __name__ == '__main__' :

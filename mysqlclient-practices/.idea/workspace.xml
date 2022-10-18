@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="07f26152-d890-4560-9cc1-6d2779404f98" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emaillist/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/emaillist/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emaillist/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/emaillist/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emaillist/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/emaillist/model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +42,7 @@
       <recent name="C:\bitacademyBigdata\mariadbTest\mysqlclient-practices\basics" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mysqlclient-practices" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,7 +85,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="insert-test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mysqlclient-practices" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -93,11 +93,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/basics" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bookmall" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basics/insert-test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bookmall/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.app" />
         <item itemvalue="Python.model" />
         <item itemvalue="Python.select-test" />
         <item itemvalue="Python.delete-test" />
-        <item itemvalue="Python.insert-test" />
       </list>
     </recent_temporary>
   </component>
