@@ -1,8 +1,7 @@
 from MySQLdb import connect, OperationalError
 
-
+#연결
 try :
-    #연결
     db = connect(
             user = 'webdb',
             password = 'webdb',
@@ -10,11 +9,7 @@ try :
             port = 3306,
             db = 'webdb',
             charset = 'utf8') #MySQL에서는 'utf-8'로 쓰면 오류
-    print("success")
+    print("연결성공")
 except OperationalError as e:
-    print('error!!!!')
+    print(f'에러 : {e}')
 
-print('end!!!')
-
-#cursor 생성
-#cursor = db.cursor()
