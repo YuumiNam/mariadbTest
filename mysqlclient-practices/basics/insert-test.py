@@ -26,7 +26,7 @@ try :
     db.close()
 
     # 결과 확인
-    if count == 1 :
+    if count >= 1 :
         print('실행결과 : 성공')
     else :
         print('실행결과 : 실패')

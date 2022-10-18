@@ -19,7 +19,7 @@ try :
     count = cursor.execute(sql)
 
     # 4. 결과 받아오기
-    results = cursor.fetchall();
+    results = cursor.fetchall()
 
     # 5. 자원 정리
     cursor.close()
