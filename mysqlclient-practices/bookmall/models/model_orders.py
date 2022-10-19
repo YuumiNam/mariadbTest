@@ -48,7 +48,7 @@ def findall() :
         cursor = db.cursor(DictCursor)
 
         # 3. sql(insert문) 실행
-        sql = 'select b.name, d.title, c.amount, a.totalprice ,a.address from orders a, member b, cart c, book d where b.no = a.member_no and b.no = c.member_no and d.no = c.book_no'
+        sql = 'select b.name, a.totalprice, a.address from orders a, member b'
         cursor.execute(sql)
 
         # 4. 결과 받아오기
@@ -90,3 +90,56 @@ def findall() :
 #
 #     except OperationalError as e:
 #             print(f'에러 : {e}')
+
+
+
+def orderbookinsert(orders_no,book_no) :
+    try :
+        # 1.연결
+        db = conn()
+
+        # 2. cursor 생성
+        cursor = db.cursor()
+
+        # 3. sql(insert문) 실행
+        sql = 'insert into orders_book values(null,%s,%s)'
+        count = cursor.execute(sql, (orders_no,book_no))
+
+        # 4. commit
+        db.commit()
+
+        # 5. 자원 정리
+        cursor.close()
+        db.close()
+
+        return count == 1
+
+    except OperationalError as e:
+        print(f'에러 : {e}')
+
+
+
+def orderbookfindall() :
+    try:
+        # 1.연결
+        db = conn()
+
+        # 2. cursor 생성
+        cursor = db.cursor(DictCursor)
+
+        # 3. sql(insert문) 실행
+        sql = 'select c.title, b.amount from orders_book a, cart b, book c where a.book_no = b.book_no and a.book_no = c.no'
+        cursor.execute(sql)
+
+        # 4. 결과 받아오기
+        results = cursor.fetchall()
+
+        # 5. 자원 정리
+        cursor.close()
+        db.close()
+
+        # 결과 확인
+        return results
+
+    except OperationalError as e:
+        print(f'에러 : {e}')

@@ -46,4 +46,13 @@ model_orders.insert('1','72000','경기도')
 
 results = model_orders.findall()
 for index, result in enumerate(results):
-    print(f'{index + 1} : {result["name"]} , {result["title"]} , {result["amount"]}권 , {result["totalprice"]}원, {result["address"]}')
+    print(f'{index + 1} : {result["name"]} , {result["totalprice"]}원, {result["address"]}')
+
+
+print()
+print("--주문 도서--")
+model_orders.orderbookinsert('1','1')
+
+results = model_orders.orderbookfindall()
+for index, result in enumerate(results):
+    print(f'{index + 1} : {result["title"]} , {result["amount"]}')
