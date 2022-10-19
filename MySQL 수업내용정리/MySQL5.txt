@@ -1,0 +1,53 @@
+<조인 공식 정리>
+inner join
+	equi join
+	join on
+	natural join
+	join ~ using()
+
+outer join
+	left join
+	right join
+	full join on
+
+
+<1:N관계 중 식별관계(실선) vs 비식별관계(점선)>
+
+emp사원               dept부서
+no                       no
+name                   name
+
+비식별관계(점선) - 일반적인경우
+PK가 N관계에서 FK가 되는경우임
+(N관계에서는 자신의 FK로 쓰기때문에 식별이 불가능)
+
+식별관계(실선)
+PK가 N관계에서 PK가 되는경우임
+(N관계에서도 자신의 주 키로 쓰기때문에 식별이 가능)
+
+주의!
+키 색깔로 식별vs비식별을 구분하지 말기!
+선으로 구분해야함
+식별관계이지만 N관계에서 FK가 될수도 있음(?) = PFK
+
+부모 테이블의 키가 자신의 기본키에 포함되기 때문에 반드시
+부모 테이블에 데이터가 존재해야 자식 테이블에 데이터를 입력할 수 있다.
+즉, 부모 데이터가 없다면 자식 데이터는 생길 수 없다.
+
+
+선 안에 동그라미
+N관계에서 null허용을 체크 안해주면 생김
+
+
+<순공학 vs 역공학>
+논리 데이터베이스 설계(ERD)  <-->  물리 데이터 베이스(tables)
+옵션 database - reverse engineer 역공학 = 미리그려진설계도를 불러옴
+옵션 database - forward engineer 순공학 = 설계도부터 만드는관계
+
+
+
+<서브 쿼리>
+(이중포문 같이 하나의 select문 안에 또 select가 들어있는거)
+select (select)
+	from (select)
+	where (select)  <-- 서브쿼리 중 가장 많이쓰임

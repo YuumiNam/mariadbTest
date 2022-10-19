@@ -1,0 +1,33 @@
+1. 공식!!
+select (column)
+from (table)
+where (조건식)                     
+                          
+order by (column or 표현식) asc desc
+                       
+
+2. 집계함수를 썼을 때 공식!!
+select (column)
+from (table)
+where (조건식)
+
+group by (column)  << group by가 된 column은 select절에 올수 있다
+having  (조건식)
+
+order by (column or 표현식) asc desc
+
+
+3. 조인(join) 공식!
+<<조인도 원래 공식이랑 다를게없다 여러 테이블을 한개로 집계해준다는것만 다름>>
+<<순서는 select from where 같음!>>
+
+select *
+from (tableA,tableB) <<< 조인할 두 테이블
+where (columnA = columnB) <<< 일반적으로 두 테이블 중 PKcolumn,FKcolumn (조인할 두 column이라는뜻),  테이블이3개면 조인조건이 2개
+
+4. 조인의 유형
+inner join : 위에서 본 3번이 이것     ->    equi join('='를 써서조인), join~on(표준)
+
+outter join : "inner join"을 만족하지 않는 결과중 출력하고 싶은게 있을때          ->     join~on
+ex) 사원과 부서를 "innerjoin"으로 해줬는데, 부서가 없는 사장님도 추가해야할때
+

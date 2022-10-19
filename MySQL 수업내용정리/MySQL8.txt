@@ -1,0 +1,36 @@
+<프로그램을 만들어보자>
+<main.py와 model.py 두개의파일에 만들것>
+<main은 model의 코드를 받아 실행, model은 l,a,d,q함수를 만들고 db에다 전달하는 함수>
+
+# (l)ist, (a)dd, (d)elete, (q)uit > 
+
+'l'을 누른경우
+1: 이선무 : dltjsam@gmail.com
+2: 둘리 : dooly@gmail.com
+.
+.
+
+# (l)ist, (a)dd, (d)elete, (q)uit > 
+
+'a'를 누른경우
+first name : 마 (엔터)
+last name : 이콜 (엔터)
+email : michol@gmail.com (엔터)
+.
+.
+1: 이선무 : dltjsam@gmail.com
+2: 둘리 : dooly@gmail.com
+3: 마이콜 : michol@gmail.com
+
+
+# (l)ist, (a)dd, (d)elete, (q)uit >
+'d'를 누른경우 
+email : dltjsam@gmail.com
+.
+.
+2: 둘리 : dooly@gmail.com
+3: 마이콜 : michol@gmail.com
+
+
+# (l)ist, (a)dd, (d)elete, (q)uit > q
+# 종료

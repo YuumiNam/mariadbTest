@@ -1,0 +1,57 @@
+0. 깃허브 사용법
+깃허브 회원가입
+|
+깃 다운로드
+(cmd에서 git-v 치면 깔렸는지 알수있음)
+|
+setting 들어가서 developer setting 들어가서 personal access tokens생성
+(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)
+|
+새 repositories 생성
+|
+readme.md는 어떤 코드인지 설명,소개를 하는곳
+(vscode에서도 쓸수 있음)
+
+.gitignore은 어떤 파일을 무시해서 올린건지 분류해주는 파일
+(**/__pycache__)
+
+
+(cmd상에서)
+git init
+git add -A
+git commit -m '내용'
+
+git config --global user.email "이메일"
+git config --global user.name "id"
+
+git commit -m '내용'
+git branch -M main
+git remote add origin (주소)
+git push -u origin +main
+
+(add 한개만 하는법)
+git add "(파일이름 or 폴더이름)"
+git commit -m "커밋할이름"
+git push
+
+
+(add 다하는법)
+git add -A
+git commit -m "이름"
+git push
+
+
+
+
+echo "# pythonTest" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/YuumiNam/pythonTest.git
+git push -u origin main
+
+
+git remote add origin https://github.com/YuumiNam/pythonTest.git
+git branch -M main
+git push -u origin main

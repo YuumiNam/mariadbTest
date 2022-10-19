@@ -1,0 +1,11 @@
+<설치>
+mariadb 다운로드
+workbench 다운로드
+
+(mariadb에서)
+mysql -u 유저이름 -D 스키마이름 -p  
+
+show databases;
+
+
+-> 가 뜬 경우 \c를 치면 이전으로 되돌아감
