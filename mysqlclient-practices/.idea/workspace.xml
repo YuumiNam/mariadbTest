@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="07f26152-d890-4560-9cc1-6d2779404f98" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmall/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmall/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookmall/models/model_book.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmall/models/model_book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmall/models/model_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmall/models/model_cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmall/models/model_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmall/models/model_category.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmall/models/model_member.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmall/models/model_member.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookmall/models/model_orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmall/models/model_orders.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

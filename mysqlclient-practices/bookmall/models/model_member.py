@@ -11,6 +11,8 @@ def conn() :
                 charset = 'utf8')
     return db
 
+
+
 def insert(name,email,phone) :
     try :
         # 1.연결
@@ -34,6 +36,8 @@ def insert(name,email,phone) :
 
     except OperationalError as e:
         print(f'에러 : {e}')
+
+
 
 def findall() :
     try:
@@ -61,27 +65,28 @@ def findall() :
         print(f'에러 : {e}')
 
 
-def deletebyname(name):
-    try:
-            # 1.연결
-            db = conn()
 
-            # 2. cursor 생성
-            cursor = db.cursor()
-
-            # 3. sql(delete문) 실행
-            sql = 'delete from member where name = %s'
-            count = cursor.execute(sql, (name,))
-
-            # 4. commit
-            db.commit()
-
-            # 5. 자원 정리
-            cursor.close()
-            db.close()
-
-            # 결과 확인
-            return count == 1
-
-    except OperationalError as e:
-            print(f'에러 : {e}')
+# def deletebyname(name):  #외래키로 참조되고 있는 상태라서 기본적으로는 못씀 참고용으로 적어놓음
+#     try:
+#             # 1.연결
+#             db = conn()
+#
+#             # 2. cursor 생성
+#             cursor = db.cursor()
+#
+#             # 3. sql(delete문) 실행
+#             sql = 'delete from member where name = %s'
+#             count = cursor.execute(sql, (name,))
+#
+#             # 4. commit
+#             db.commit()
+#
+#             # 5. 자원 정리
+#             cursor.close()
+#             db.close()
+#
+#             # 결과 확인
+#             return count == 1
+#
+#     except OperationalError as e:
+#             print(f'에러 : {e}')
