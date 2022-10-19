@@ -3,11 +3,11 @@ from MySQLdb.cursors import DictCursor
 
 def conn() :
     db = connect(
+                db='bookmall',
                 user = 'bookmall',
                 password = 'bookmall',
                 host = '127.0.0.1',
                 port = 3306,
-                db = 'bookmall',
                 charset = 'utf8')
     return db
 
