@@ -13,7 +13,7 @@ def conn() :
 
 
 
-def insert(member_no,totalprice,address) :
+def insert(member_no,totalprice,address,amount) :
     try :
         # 1.연결
         db = conn()
@@ -22,8 +22,8 @@ def insert(member_no,totalprice,address) :
         cursor = db.cursor()
 
         # 3. sql(insert문) 실행
-        sql = 'insert into orders values(null,%s,%s,%s)'
-        count = cursor.execute(sql, (member_no,totalprice,address))
+        sql = 'insert into orders values(null,%s,%s,%s,%s)'
+        count = cursor.execute(sql, (member_no,totalprice,address,amount))
 
         # 4. commit
         db.commit()
@@ -48,7 +48,7 @@ def findall() :
         cursor = db.cursor(DictCursor)
 
         # 3. sql(insert문) 실행
-        sql = 'select b.name, a.totalprice, a.address from orders a, member b'
+        sql = 'select b.name, a.totalprice, a.address, a.amount from orders a, member b'
         cursor.execute(sql)
 
         # 4. 결과 받아오기
@@ -93,7 +93,7 @@ def findall() :
 
 
 
-def orderbookinsert(orders_no,book_no) :
+def ordersbookinsert(orders_no,book_no) :
     try :
         # 1.연결
         db = conn()
@@ -119,7 +119,7 @@ def orderbookinsert(orders_no,book_no) :
 
 
 
-def orderbookfindall() :
+def ordersbookfindall() :
     try:
         # 1.연결
         db = conn()
@@ -128,7 +128,7 @@ def orderbookfindall() :
         cursor = db.cursor(DictCursor)
 
         # 3. sql(insert문) 실행
-        sql = 'select c.title, b.amount, b.amount from orders_book a, cart b, book c where a.book_no = b.book_no and a.book_no = c.no'
+        sql = 'select a.title, b.amount from book a, orders b, orders_book c where a.no = c.book_no and b.no = c.orders_no;'
         cursor.execute(sql)
 
         # 4. 결과 받아오기

@@ -45,8 +45,8 @@ for index, result in enumerate(results):
 
 print()
 print("--주문 리스트--")
-model_orders.insert('1','72000','평택')
-model_orders.insert('2','57000','서울')
+model_orders.insert('1','72000','평택',3)
+model_orders.insert('2','38000','서울',2)
 
 results = model_orders.findall()
 for index, result in enumerate(results):
@@ -55,9 +55,9 @@ for index, result in enumerate(results):
 
 print()
 print("--주문 도서--")
-model_orders.orderbookinsert('1','1')
-model_orders.orderbookinsert('2','3')
+model_orders.ordersbookinsert('1','1')
+model_orders.ordersbookinsert('2','3')
 
-results = model_orders.orderbookfindall()
+results = model_orders.ordersbookfindall()
 for index, result in enumerate(results):
     print(f'{index + 1} : {result["title"]} , {result["amount"]}권')
