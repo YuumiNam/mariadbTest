@@ -128,7 +128,7 @@ def orderbookfindall() :
         cursor = db.cursor(DictCursor)
 
         # 3. sql(insert문) 실행
-        sql = 'select c.title, b.amount from orders_book a, cart b, book c where a.book_no = b.book_no and a.book_no = c.no'
+        sql = 'select c.title, b.amount, b.amount from orders_book a, cart b, book c where a.book_no = b.book_no and a.book_no = c.no'
         cursor.execute(sql)
 
         # 4. 결과 받아오기

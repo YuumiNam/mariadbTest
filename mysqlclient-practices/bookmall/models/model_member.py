@@ -13,7 +13,7 @@ def conn() :
 
 
 
-def insert(name,email,phone) :
+def insert(name,email,phone,password) :
     try :
         # 1.연결
         db = conn()
@@ -22,8 +22,8 @@ def insert(name,email,phone) :
         cursor = db.cursor()
 
         # 3. sql(insert문) 실행
-        sql = 'insert into member values(null,%s,%s,%s)'
-        count = cursor.execute(sql, (name,email,phone))
+        sql = 'insert into member values(null,%s,%s,%s,%s)'
+        count = cursor.execute(sql, (name,email,phone,password))
 
         # 4. commit
         db.commit()
