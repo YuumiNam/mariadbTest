@@ -7,12 +7,13 @@ import com.bitacademy.emaillist.dao.EmaillistDao;
 import com.bitacademy.emaillist.vo.EmaillistVo;
 
 public class EmaillistMain {
-	private static Scanner sc = null; 
+	private static Scanner sc = null;
 	
 	public static void main(String[] args) {
 		sc = new Scanner(System.in);
+		
 		while(true) {
-			System.out.print("(l)ist, (a)dd, (d)elete, (q)uit > ");
+			System.out.print("(l)ist, (a)dd, (d)elete (q)uit > ");
 			String command = sc.nextLine();
 			
 			if("l".equals(command)) {
@@ -25,33 +26,42 @@ public class EmaillistMain {
 				break;
 			}
 		}
+		
 		sc.close();
 	}
-
+	
+	// doDelete
 	private static void doDelete() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private static void doAdd() {
-		System.out.print("성: ");
-		String firstName = sc.nextLine();
-		
-		System.out.print("이름: ");
-		String lastName = sc.nextLine();
-		
-		System.out.print("이메일: ");
+		System.out.println("이메일:");
 		String email = sc.nextLine();
 		
-		System.out.println(firstName + lastName + " " + email);
+		boolean result = new EmaillistDao().deleteByEmail(email);
 		
 		doList();
 	}
+	
+	// doAdd
+	private static void doAdd() {
+		System.out.print("성:");
+		String firstName = sc.nextLine();
+		
+		System.out.print("이름:");
+		String lastName = sc.nextLine();
 
+		System.out.print("이메일:");
+		String email = sc.nextLine();
+		
+		Boolean result = new EmaillistDao().insert(firstName,lastName,email);
+		
+		doList();
+	}
+	
+	// doList
 	private static void doList() {
 		List<EmaillistVo> list = new EmaillistDao().findAll();
+		
 		for(EmaillistVo vo : list) {
-			System.out.println("이름 :" + vo.getFirstName()  + vo.getLastName() + "이메일 : " + vo.getEmail());
+			System.out.println("이름:" + vo.getFirstName() + " " + vo.getLastName() + ", 이메일:" + vo.getEmail());
 		}
 	}
 }

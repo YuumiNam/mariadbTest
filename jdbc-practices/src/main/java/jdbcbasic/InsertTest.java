@@ -37,9 +37,9 @@ public class InsertTest {
 							" into dept" +
 							" values(null, '" + name + "')"; // 쿼리
 			
-			int count = stmt.executeUpdate(sql); // 
+			int count = stmt.executeUpdate(sql); // executeUpdate()는 insert등은 반영된 건수를 반환, create&drop은 -1을 반환
 			
-			result = count == 1;
+			result = count == 1; // count == 1 << true
 			
 			
 		} catch (ClassNotFoundException e) {

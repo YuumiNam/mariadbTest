@@ -7,7 +7,6 @@ public class EmaillistVo {
 	private String lastName;
 	private String email;
 	
-	
 	// getter setter
 	public Long getNo() {
 		return no;
@@ -33,7 +32,6 @@ public class EmaillistVo {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 	
 	// toString
 	@Override
