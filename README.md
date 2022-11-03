@@ -1,1 +1,1 @@
-﻿# MySQL 대신 mariaDB를 사용
+﻿# MySQL 대신 mariaDB를 사용했습니다
