@@ -1,4 +1,4 @@
-package test;
+package jdbcbasic;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -30,6 +30,5 @@ public class ConnectionTest {
 				e.printStackTrace();
 			}
 		}
-		
 	}
 }
