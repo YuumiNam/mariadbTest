@@ -52,9 +52,12 @@ public class SelectTest {
 		} finally {
 			try {
 				if(rs != null) {
-					conn.close();
+					rs.close();
 				}
 				if(stmt != null) {
+					stmt.close();
+				}
+				if(conn != null) {
 					conn.close();
 				}
 			} catch (SQLException e) {

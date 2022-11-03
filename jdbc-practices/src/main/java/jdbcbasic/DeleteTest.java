@@ -5,18 +5,16 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class InsertTest {
+public class DeleteTest {
 	public static void main(String[] args) {
-		insert("시스템");
-		insert("마케팅");
-		insert("운영");
+		boolean result = delete(7L);
+		System.out.println(result ? "성공" : "실패");
 	}
-	
-	public static Boolean insert(String name) {
+
+	private static boolean delete(Long no) {
 		boolean result = false;
 		Connection conn = null;
 		Statement stmt = null;
-		
 		
 		try {
 			//1. JDBC Driver Class Loading
@@ -33,9 +31,10 @@ public class InsertTest {
 	
 			
 			//4, SQL 실행
-			String sql = "insert" +
-							" into dept" +
-							" values(null, '" + name + "')"; // 쿼리
+			String sql = 
+					"delete" +
+					"  from dept" +
+					" where no = " + no; // 쿼리
 			
 			int count = stmt.executeUpdate(sql); // 
 			
@@ -60,5 +59,6 @@ public class InsertTest {
 		}
 	
 		return result;
+		
 	}
 }
