@@ -1,9 +1,1 @@
-**/__pycache__
-**/.vscode
-**/.idea
-**/venv
-
-**/target
-**/.classpath
-**/.project
-**/.settings
+/target/
