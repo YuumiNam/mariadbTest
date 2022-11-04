@@ -1,4 +1,4 @@
-package com.bitacademy.emaillist.test;
+package com.bitacademy.emaillist.dao.test;
 
 import java.util.List;
 
