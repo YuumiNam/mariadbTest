@@ -10,6 +10,7 @@ public class EmaillistDaoTest {
 		testFindAll();
 	}
 
+	
 	private static void testFindAll() {
 		List<EmaillistVo> list = new EmaillistDao().findAll();
 		for(EmaillistVo vo : list) {
