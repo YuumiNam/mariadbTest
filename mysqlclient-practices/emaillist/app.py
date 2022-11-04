@@ -25,7 +25,7 @@ def run_delete() :
     email = input("email : ")
     # 처리
     model.deletebyemail(email)
-    # 출력
+    ## 출력
     run_list()
 
 

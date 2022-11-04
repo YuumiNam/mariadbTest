@@ -62,7 +62,7 @@ def insert(first_name, last_name, email) :
         cursor.close()
         db.close()
 
-        # 6. 결과
+        ## 6. 결과
         return count == 1
 
     except OperationalError as e:
