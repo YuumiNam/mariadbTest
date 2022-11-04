@@ -5,14 +5,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class InsertTest {
+public class UpdateTest01 {
 	public static void main(String[] args) {
-		insert("시스템");
-		insert("마케팅");
-		insert("운영");
+		DeptVo vo = new DeptVo();
+		vo.setNo(1L);
+		vo.setName("경영지원");
+		
+		boolean result = update(vo);
+		System.out.println(result ? "성공" : "실패");
 	}
 	
-	public static Boolean insert(String name) {
+	private static boolean update(DeptVo deptVo) {
 		boolean result = false;
 		Connection conn = null;
 		Statement stmt = null;
@@ -24,8 +27,8 @@ public class InsertTest {
 			
 			
 			//2. 연결하기
-			String url = "jdbc:mysql://127.0.0.1:3306/webdb?charset=utf8";
-			conn = DriverManager.getConnection(url, "webdb", "webdb");
+			String url = "jdbc:mysql://127.0.0.1:3306/employees?charset=utf8";
+			conn = DriverManager.getConnection(url, "hr", "hr");
 			
 			
 			//3. statement
@@ -33,14 +36,14 @@ public class InsertTest {
 	
 			
 			//4, SQL 실행
-			String sql = "insert" +
-							" into dept" +
-							" values(null, '" + name + "')"; // 쿼리
+			String sql = 
+					"update dept" +
+					"   set name = '" + deptVo.getName() + "'" +
+				    " where no = " + deptVo.getNo(); // 쿼리
 			
-			int count = stmt.executeUpdate(sql); // executeUpdate()는 insert등은 반영된 건수를 반환, create&drop은 -1을 반환
+			int count = stmt.executeUpdate(sql); // 
 			
-			result = count == 1; // count == 1 << true
-			
+			result = count == 1;
 			
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 로딩 실패:" + e);
@@ -58,7 +61,7 @@ public class InsertTest {
 				e.printStackTrace();
 			}
 		}
-	
+		
 		return result;
 	}
 }

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DeleteTest {
+public class DeleteTest01 {
 	public static void main(String[] args) {
 		boolean result = delete(7L);
 		System.out.println(result ? "성공" : "실패");
