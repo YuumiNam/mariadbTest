@@ -13,7 +13,7 @@ import com.bitacademy.emaillist.vo.EmaillistVo;
 public class EmaillistDao {
 	
 	// doAdd()
-	public Boolean insert(String firstName, String lastName, String email) {
+	public Boolean insert(EmaillistVo vo) {
 		boolean result = false;
 		Connection conn = null;
 		Statement stmt = null;
@@ -35,7 +35,7 @@ public class EmaillistDao {
 			//4. SQL 실행
 			String sql = "insert" +
 							" into emaillist" +
-							" values(null, '" + firstName + "' , '" + lastName + "', '" + email + "')"; // 쿼리
+							" values(null, '" + vo.getFirstName() + "' , '" + vo.getLastName() + "', '" + vo.getEmail() + "')"; // 쿼리
 			
 			
 			int count = stmt.executeUpdate(sql); // executeUpdate()는 insert등은 반영된 건수를 반환, create&drop은 -1을 반환
@@ -87,11 +87,9 @@ public class EmaillistDao {
 	
 			
 			//4. SQL 실행
-			String sql = 
-					"delete" +
-					"  from emaillist" +
-					" where email = " + email; // 쿼리
-			
+			String sql = "delete " +
+						 	" from emaillist" +
+						 	" where email = '" + email + "'";
 			int count = stmt.executeUpdate(sql); // 
 			
 			//5. 결과처리

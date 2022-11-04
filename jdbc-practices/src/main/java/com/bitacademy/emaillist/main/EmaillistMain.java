@@ -35,13 +35,17 @@ public class EmaillistMain {
 		System.out.println("이메일:");
 		String email = sc.nextLine();
 		
-		boolean result = new EmaillistDao().deleteByEmail(email);
+		new EmaillistDao().deleteByEmail(email);
 		
 		doList();
+		
+		
 	}
 	
 	// doAdd
 	private static void doAdd() {
+		EmaillistVo vo = new EmaillistVo();
+		
 		System.out.print("성:");
 		String firstName = sc.nextLine();
 		
@@ -51,7 +55,11 @@ public class EmaillistMain {
 		System.out.print("이메일:");
 		String email = sc.nextLine();
 		
-		Boolean result = new EmaillistDao().insert(firstName,lastName,email);
+		vo.setFirstName(firstName);
+		vo.setLastName(lastName);
+		vo.setEmail(email);
+		
+		new EmaillistDao().insert(vo);
 		
 		doList();
 	}
