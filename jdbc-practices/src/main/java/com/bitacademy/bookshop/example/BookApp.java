@@ -2,7 +2,7 @@ package com.bitacademy.bookshop.example;
 
 import java.util.Scanner;
 
-public class BookMain {
+public class BookApp {
 	public static void main(String[] args) {
 		Book[] books = new Book[10];
 		
