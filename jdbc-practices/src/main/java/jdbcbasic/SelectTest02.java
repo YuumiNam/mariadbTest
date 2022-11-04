@@ -2,11 +2,11 @@ package jdbcbasic;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class SelectTest01 {
+public class SelectTest02 {
 	public static void main(String[] args) {
 		search("pat");
 	}
@@ -14,7 +14,7 @@ public class SelectTest01 {
 	private static void search(String keyword) {
 		Connection conn = null;
 		ResultSet rs = null;
-		Statement stmt = null;
+		PreparedStatement pstmt = null;
 		
 		
 		try {
@@ -27,18 +27,22 @@ public class SelectTest01 {
 			conn = DriverManager.getConnection(url, "hr", "hr");
 			
 			
-			//3. statement 생성
-			stmt = conn.createStatement(); // row값
-	
-			
-			//4. SQL 실행
+			//3. statement 준비
 			String sql = "select emp_no, first_name" +
 							" from employees" +
-							" where first_name like '%" + keyword + "%'"; // 쿼리
+							" where first_name like ?"; // 쿼리
 			
-			rs = stmt.executeQuery(sql); // row값에 쿼리를 대입시킨것 (한줄만)
+			pstmt = conn.prepareStatement(sql);
 			
-			//5. 결과(ResultSet) 처리
+			//4, Binding
+			pstmt.setString(1, '%' + keyword + '%'); // 쿼리에있는 ?를 바인딩해준것
+			
+			
+			//5. SQL 실행
+			rs = pstmt.executeQuery(); // row값에 쿼리를 대입시킨것 (한줄만)
+									   // 파라미터 값에 sql을 넣어주면 안됨
+			
+			//6. 결과(ResultSet) 처리
 			while(rs.next()) {
 				Long empNo = rs.getLong(1);
 				String firstName = rs.getString(2); // 한줄이 아닌 전체를 뽑음
@@ -55,8 +59,8 @@ public class SelectTest01 {
 				if(rs != null) {
 					rs.close();
 				}
-				if(stmt != null) {
-					stmt.close();
+				if(pstmt != null) {
+					pstmt.close();
 				}
 				if(conn != null) {
 					conn.close();
@@ -67,3 +71,4 @@ public class SelectTest01 {
 		}
 	}
 }
+

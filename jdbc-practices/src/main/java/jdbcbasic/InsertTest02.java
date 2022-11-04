@@ -2,20 +2,20 @@ package jdbcbasic;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class InsertTest01 {
+public class InsertTest02 {
 	public static void main(String[] args) {
-		insert("시스템");
-		insert("마케팅");
-		insert("운영");
+		insert("시스템2");
+		insert("마케팅2");
+		insert("운영2");
 	}
 	
 	public static Boolean insert(String name) {
 		boolean result = false;
 		Connection conn = null;
-		Statement stmt = null;
+		PreparedStatement pstmt = null;
 		
 		
 		try {
@@ -28,18 +28,21 @@ public class InsertTest01 {
 			conn = DriverManager.getConnection(url, "webdb", "webdb");
 			
 			
-			//3. statement 생성
-			stmt = conn.createStatement(); // row값
-	
-			
-			//4. SQL 실행
+			//3. statement 준비
 			String sql = "insert" +
-							" into dept" +
-							" values(null, '" + name + "')"; // 쿼리
+					" into dept" +
+					" values(null, ?)"; // 쿼리
 			
-			int count = stmt.executeUpdate(sql); // executeUpdate()는 insert등은 반영된 건수를 반환, create&drop은 -1을 반환
+			pstmt = conn.prepareStatement(sql); // row값
+	
+			//4. Binding
+			pstmt.setString(1, name);
 			
-			//5. 결과처리
+			
+			//5. SQL 실행
+			int count = pstmt.executeUpdate(); // executeUpdate()는 insert등은 반영된 건수를 반환, create&drop은 -1을 반환
+			
+			//6. 결과처리
 			result = count == 1; // count == 1 << true
 			
 			
@@ -49,8 +52,8 @@ public class InsertTest01 {
 			System.out.println("Error:" + e);
 		} finally {
 			try {
-				if(stmt != null) {
-					stmt.close();
+				if(pstmt != null) {
+					pstmt.close();
 				}
 				if(conn != null) {
 					conn.close();
@@ -63,3 +66,4 @@ public class InsertTest01 {
 		return result;
 	}
 }
+

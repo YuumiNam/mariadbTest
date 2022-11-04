@@ -2,10 +2,10 @@ package jdbcbasic;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class UpdateTest01 {
+public class UpdateTest02 {
 	public static void main(String[] args) {
 		DeptVo vo = new DeptVo();
 		vo.setNo(1L);
@@ -18,7 +18,7 @@ public class UpdateTest01 {
 	private static boolean update(DeptVo deptVo) {
 		boolean result = false;
 		Connection conn = null;
-		Statement stmt = null;
+		PreparedStatement pstmt = null;
 		
 		
 		try {
@@ -31,17 +31,21 @@ public class UpdateTest01 {
 			conn = DriverManager.getConnection(url, "hr", "hr");
 			
 			
-			//3. statement 생성
-			stmt = conn.createStatement(); // row값
-	
-			
-			//4. SQL 실행
+			//3. statement 준비
 			String sql = 
 					"update dept" +
-					"   set name = '" + deptVo.getName() + "'" +
-				    " where no = " + deptVo.getNo(); // 쿼리
+					"   set name = ?" +
+				    " where no = ?"; // 쿼리
 			
-			int count = stmt.executeUpdate(sql); // 
+			pstmt = conn.prepareStatement(sql); // row값
+	
+			//4. Binding
+			pstmt.setString(1, deptVo.getName());
+			pstmt.setLong(2, deptVo.getNo());
+			
+			
+			//4. SQL 실행
+			int count = pstmt.executeUpdate(); // 
 			
 			//5. 결과처리
 			result = count == 1;
@@ -52,8 +56,8 @@ public class UpdateTest01 {
 			System.out.println("Error:" + e);
 		} finally {
 			try {
-				if(stmt != null) {
-					stmt.close();
+				if(pstmt != null) {
+					pstmt.close();
 				}
 				if(conn != null) {
 					conn.close();

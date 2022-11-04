@@ -28,7 +28,7 @@ public class EmaillistDao {
 			conn = DriverManager.getConnection(url, "webdb", "webdb");
 			
 			
-			//3. statement
+			//3. statement 생성
 			stmt = conn.createStatement(); // row값
 	
 			
@@ -85,7 +85,7 @@ public class EmaillistDao {
 			stmt = conn.createStatement(); // row값
 	
 			
-			//4, SQL 실행
+			//4. SQL 실행
 			String sql = 
 					"delete" +
 					"  from emaillist" +
@@ -93,6 +93,7 @@ public class EmaillistDao {
 			
 			int count = stmt.executeUpdate(sql); // 
 			
+			//5. 결과처리
 			result = count == 1;
 			
 			
