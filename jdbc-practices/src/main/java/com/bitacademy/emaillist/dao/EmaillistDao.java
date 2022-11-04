@@ -32,7 +32,7 @@ public class EmaillistDao {
 			stmt = conn.createStatement(); // row값
 	
 			
-			//4, SQL 실행
+			//4. SQL 실행
 			String sql = "insert" +
 							" into emaillist" +
 							" values(null, '" + firstName + "' , '" + lastName + "', '" + email + "')"; // 쿼리
@@ -40,6 +40,7 @@ public class EmaillistDao {
 			
 			int count = stmt.executeUpdate(sql); // executeUpdate()는 insert등은 반영된 건수를 반환, create&drop은 -1을 반환
 			
+			//5. 결과처리
 			result = count == 1; // count == 1 << true
 			
 			
@@ -137,7 +138,7 @@ public class EmaillistDao {
 			//3. statement
 			stmt = conn.createStatement(); // row값
 			
-			//4, SQL 실행
+			//4. SQL 실행
 			String sql = 
 				"select first_name, last_name, email" + 
 			    " from emaillist" + 
@@ -145,6 +146,7 @@ public class EmaillistDao {
 			
 			rs = stmt.executeQuery(sql); // row값에 쿼리를 대입시킨것 (한줄만)
 			
+			//5. 결과처리
 			while(rs.next()) { // 한줄이 아닌 전체를 뽑음
 				String firstName = rs.getString(1);
 				String lastName = rs.getString(2);
