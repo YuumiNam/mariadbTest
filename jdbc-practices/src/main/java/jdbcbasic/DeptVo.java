@@ -18,7 +18,7 @@ public class DeptVo { // Vo = DB의 하나의테이블을 담는 객체
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+	  
 	// toString
 	@Override
 	public String toString() {
