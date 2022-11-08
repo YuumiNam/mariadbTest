@@ -12,3 +12,6 @@ select * from emaillist order by no desc;
 
 -- delete (by email)
 delete from emaillist where email = 'dolli@gmail.com';
+
+-- delete All
+delete from emaillist;
