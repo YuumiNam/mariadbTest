@@ -12,6 +12,7 @@ import com.bitacademy.bookshop.vo.BookVo;
 
 public class BookDao {
 	
+	// insert
 	public boolean insert(BookVo vo) {
 		boolean result = false;
 		Connection conn = null;
@@ -58,7 +59,7 @@ public class BookDao {
 		return result;
 	}
 
-	
+	// find
 	public List<BookVo> findAll() {
 		List<BookVo> result = new ArrayList<>();
 		
@@ -122,26 +123,10 @@ public class BookDao {
 		return result;
 	}
 	
-	
-	
-	private Connection getConnection() throws SQLException{
-		Connection conn = null;
-		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-			String url = "jdbc:mysql://127.0.0.1:3306/webdb?charset=utf8";
-			conn = DriverManager.getConnection(url, "webdb", "webdb");
-		} catch (ClassNotFoundException e) {
-			System.out.println("Class Not Found:" +e);
-		}  
-		
-		return conn;
-	}
-
-
-	
-	
+	// update
 	public boolean updateStatus(Long no, String string) {
 		boolean result = false;
+		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
@@ -187,5 +172,19 @@ public class BookDao {
 		
 		return result;
 		
+	}
+	
+	// 예외처리
+	private Connection getConnection() throws SQLException{
+		Connection conn = null;
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+			String url = "jdbc:mysql://127.0.0.1:3306/webdb?charset=utf8";
+			conn = DriverManager.getConnection(url, "webdb", "webdb");
+		} catch (ClassNotFoundException e) {
+			System.out.println("Class Not Found:" +e);
+		}  
+		
+		return conn;
 	}
 }
