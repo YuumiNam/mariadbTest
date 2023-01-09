@@ -20,3 +20,10 @@ drop database **DB이름**;
 
 drop user '**user이름**'@'localhost';
 
+
+## 기본공식
+**select** (column) \
+**from** (table) \
+**where** (조건식)                    
+                          
+**order by** (column or 표현식) asc desc
