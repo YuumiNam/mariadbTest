@@ -1,10 +1,10 @@
-## MySQL 대신 mariaDB설치 + MySQL Workbench 설치
+# MySQL 대신 mariaDB설치 + MySQL Workbench 설치
 
 1. [MariaDB 다운로드 10.5.18](https://mariadb.org/download/?t=mariadb&p=mariadb&r=11.0.0&os=windows&cpu=x86_64&pkg=zip&m=blendbyte) <br/>
 2. [MySQL Workbench 다운로드](https://dev.mysql.com/downloads/workbench/)
 
 
-### DB생성 및 삭제
+## DB생성 및 삭제
 create database **DB이름**;
 
 create user '**user이름**'@'localhost' identified by '**비밀번호**';
@@ -21,7 +21,7 @@ drop database **DB이름**;
 drop user '**user이름**'@'localhost';
 
 
-### 기본공식
+## 기본공식
 **select** (column) \
 **from** (table) \
 **where** (조건식)                    
@@ -29,7 +29,7 @@ drop user '**user이름**'@'localhost';
 **order by** (column or 표현식) asc desc
 
 
-### 집계함수를 썼을 때 공식
+## 집계함수를 썼을 때 공식
 **select** (column) \
 **from** (table) \
 **where** (조건식)
