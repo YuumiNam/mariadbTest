@@ -27,3 +27,14 @@ drop user '**user이름**'@'localhost';
 **where** (조건식)                    
                           
 **order by** (column or 표현식) asc desc
+
+
+## 집계함수를 썼을 때 공식
+**select** (column) \
+**from** (table) \
+**where** (조건식)
+
+**group by** (column)  <<  group by가 된 column은 select절에 올수 있다 \
+**having**  (조건식)
+
+**order by** (column or 표현식) asc desc
