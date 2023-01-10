@@ -38,3 +38,11 @@ drop user '**user이름**'@'localhost';
 **having**  (조건식)
 
 **order by** (column or 표현식) asc desc
+
+
+## Primary Key vs Foreign Key
+**primary key** = 기본키,고유키 \
+각 행을 고유하게 식별하는 키
+
+**Foreign key** = 외래키 \
+한 테이블의 column(속성)으로써 다른 테이블의 row(행)을 식별할수 있는 키
