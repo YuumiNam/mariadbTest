@@ -13,8 +13,7 @@ grant all privileges on **DB이름**.* to '**user이름**'@'**localhost**';
 
 flush privileges;
 
-
-<br/><br/>
+<br/>
 
 drop database **DB이름**;
 
