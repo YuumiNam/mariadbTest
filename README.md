@@ -48,7 +48,9 @@ drop user '**user이름**'@'localhost';
 
 
 ## 식별관계 vs 비식별관계
-![employees](https://user-images.githubusercontent.com/114986610/211687282-21634756-5b2a-46c4-b38b-cc1e39dd2af0.png)
+![employees](https://user-images.githubusercontent.com/114986610/211687282-21634756-5b2a-46c4-b38b-cc1e39dd2af0.png) \
+(employeesDB 안에있는 테이블간 관계를 불러온것!! 이 관계도를 **ERD**라고 부른다.)
+
 
 **식별관계** = 실선관계 \
 다른 엔티티에 참조된 기본키가 그 엔티티에서도 기본키로 쓰이는경우
